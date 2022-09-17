@@ -1,5 +1,5 @@
-// import * as types from './actionTypes';
-// import store from '../store';
+import * as types from './actionTypes';
+import store from '../store';
 
 // create action creators here
 

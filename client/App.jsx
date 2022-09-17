@@ -1,5 +1,5 @@
 import React from 'react';
-import './stylesheets/App.css';
+// import './stylesheets/App.scss';
 import SavedStretches from './components/savedStretches';
 import RegionSelector from './components/regionSelector';
 import StretchDisplay from './components/stretchDisplay';
@@ -14,11 +14,7 @@ const App = () => {
       <SavedStretches />
       <Routines />    
     </>
-  );     
+  )     
 }
 
 export default App;
-
-
-
-
