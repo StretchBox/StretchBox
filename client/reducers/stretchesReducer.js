@@ -1,13 +1,13 @@
-// import * as types from '../actions/actionTypes';
-// import * as actions from '../actions/actions.js';
-// import store from '../store.js';
-// // import component HERE
+import * as types from '../actions/actionTypes';
+import * as actions from '../actions/actions.js';
+import store from '../store.js';
+// import component HERE
 
-// const initialState = {
-//     // Create initial State here
-// }
+const initialState = {
+    // Create initial State here
+}
 
-// const stretchesReducer = (state = initialState, action) => {
+const stretchesReducer = (state = initialState, action) => {
     // switch (action.type) {
     //     case types.//ACTION_NAME
     //         return {
@@ -18,6 +18,7 @@
     //         return state;
     //     }
     // }
-// }
+    return state;
+}
 
-// export default stretchesReducer;
+export default stretchesReducer;

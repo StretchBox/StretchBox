@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/regionSelector.scss'
 
 const RegionSelector = () => {
   return (
