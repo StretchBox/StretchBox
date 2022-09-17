@@ -11,10 +11,11 @@ function fetchApi(variable) {
       'X-Api-Key': 'yPvp7DZtvxsNwvYebl/CbA==Qp9XuU0upuR0x5BD'
     }
   }
-  
+
   function callback(error, response, body) {
     if(error) return console.error('Request failed:', error);
     else if(response.statusCode != 200) return console.error('Error:', body.statusCode, response.toString('utf8'));
+    // request(options, callback)
     const exercises = JSON.parse(body)
   
     // console.log(exercises)
@@ -43,6 +44,7 @@ apiController.abdominals = (req, res, next) => {
 
 apiController.abductors = (req, res, next) => {
 
+<<<<<<< HEAD
 }
 
 apiController.adductors = (req, res, next) => {
@@ -117,6 +119,8 @@ apiController.triceps = (req, res, next) => {
 //   return res
 //   }
 
-// request(options, callback)
 
 module.exports = apiController
+=======
+// request(options, callback)
+>>>>>>> dev
