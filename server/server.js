@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const databaseQuery = require('./db-population')
 const apiController = require('./controllers/apiController')
 
 
@@ -17,7 +18,7 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/', apiController.chest, (req, res) => {
- res.status(200).json(res.locals.chest);
+ res.sendStatus(200);
 });
 
 
