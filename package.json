@@ -21,6 +21,7 @@
   "homepage": "https://github.com/StretchBox/StretchBox#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "pg": "^8.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",

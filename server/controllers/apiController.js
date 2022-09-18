@@ -1,5 +1,5 @@
 const request = require('request')
-const database = require ('./model');
+const database = require ('../model');
 
 const apiController = {};
 
@@ -31,7 +31,7 @@ function fetchApi(variable) {
       })
     }
     console.log(returnArr);
-    //
+    // db query 
     return returnArr;
     }
   request(options, callback, muscleGroup)
@@ -44,7 +44,6 @@ apiController.abdominals = (req, res, next) => {
 
 apiController.abductors = (req, res, next) => {
 
-<<<<<<< HEAD
 }
 
 apiController.adductors = (req, res, next) => {
@@ -60,6 +59,7 @@ apiController.calves = (req, res, next) => {
 }
 
 apiController.chest = (req, res, next) => {
+  console.log('hello');
   let muscleGroup = 'chest';
   res.locals.chest = fetchApi(muscleGroup);
   console.log('apiController.chest, res.locals', res.locals.chest);
@@ -120,7 +120,4 @@ apiController.triceps = (req, res, next) => {
 //   }
 
 
-module.exports = apiController
-=======
-// request(options, callback)
->>>>>>> dev
+module.exports = apiController;
