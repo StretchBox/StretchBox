@@ -30,8 +30,23 @@ function fetchApi(variable) {
         instructions: instructions
       })
     }
-    console.log(returnArr);
-    // db query 
+    // console.log(returnArr);
+    // iterate through returnArr
+    for (let i = 0; i < returnArr.length; i++){
+        // declare query text
+      const text = `INSERT INTO stretches(name, ${returnArr[i].muscle}, instructions) VALUES($1, $2, $3)`;
+      // declare the values
+      const values = [returnArr[i].name, true, returnArr[i].instructions];
+      // db query
+      database
+        .query(text, values)
+        .then(response => {
+          console.log('post response: done')
+        })
+        .catch(err => {
+            console.error('saveStretch error');
+        });
+    }
     return returnArr;
     }
   request(options, callback, muscleGroup)
@@ -59,7 +74,6 @@ apiController.calves = (req, res, next) => {
 }
 
 apiController.chest = (req, res, next) => {
-  console.log('hello');
   let muscleGroup = 'chest';
   res.locals.chest = fetchApi(muscleGroup);
   console.log('apiController.chest, res.locals', res.locals.chest);
