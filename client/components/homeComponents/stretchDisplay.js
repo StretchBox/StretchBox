@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/stretchDisplay.scss'
+import '../../stylesheets/stretchDisplay.scss'
 
 const StretchDisplay = () => {
   return (
