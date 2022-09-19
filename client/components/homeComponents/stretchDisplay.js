@@ -1,20 +1,13 @@
 import React from 'react';
-import '../../stylesheets/stretchDisplay.scss'
+import '../../stylesheets/stretchDisplay.scss';
+import StretchDisplayWindow from  './subComponents/stretchDisplayWindow';
 
 const StretchDisplay = () => {
   return (
+
     <div className="stretchDisplay">
-  
-      <p> bro why won't you just go wher I want you to???</p>
-      <div className="displayForStretches">
-    <p> so basically what's up</p>
-      </div>
-
-
-
-
-
-
+      <h3>Display For Selected Stretches</h3>
+      <StretchDisplayWindow />
     </div>
   )
 }
