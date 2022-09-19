@@ -1,12 +1,17 @@
-import React from 'react'
+import React from 'react';
+import '../../../stylesheets/stretchinfo.scss';
 
 const StretchInfo = value => {
     console.log(value)
   return (
-    <div>
-      <p>Name: {value.name}</p>
-      <p>Muscle: {value.muscle}</p>
-      <p>Instructions: {value.instructions}</p>
+    <div className="stretch-info">
+      <div className="name-muscle">
+        <p><strong>Name:</strong> {value.name}</p>
+        <p><strong>Muscle:</strong> {value.muscle}</p>
+      </div>
+      <div className="instructions">
+        <p><strong>Instructions:</strong> {value.instructions}</p>
+      </div>
     </div>
   )
 }

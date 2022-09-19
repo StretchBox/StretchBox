@@ -25,7 +25,7 @@ const StretchDisplayWindow = ({value}) => {
 
   return(
     <div className="StretchDisplayWindow">
-      <button className="clear-button" onClick={(e) => setStretches([])}>Clear</button>
+      <button className="clear-button" onClick={(e) => setStretches([])}>CLEAR</button>
       <div>
         {stretches}
       </div>

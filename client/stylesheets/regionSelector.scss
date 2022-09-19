@@ -116,10 +116,10 @@ button {
 
 #lower_back {
     position: absolute;
-    width: 40px;
+    width: 75px;
     height: 30px;
     margin-top: 208px;
-    margin-left: 415px;
+    margin-left: 395px;
     border-radius: 60%; 
 }
 
@@ -161,10 +161,10 @@ button {
 
 #middle_back {
     position: absolute;
-    width: 40px;
+    width: 80px;
     height: 40px;
     margin-top: 160px;
-    margin-left: 415px;
+    margin-left: 395px;
     border-radius: 60%; 
 }
 
@@ -174,5 +174,32 @@ button {
     height: 50px;
     margin-top: 150px;
     margin-left: 360px;
+    border-radius: 60%; 
+}
+
+#quadriceps {
+    position: absolute;
+    width: 30px;
+    height: 75px;
+    margin-top: 270px;
+    margin-left: 170px;
+    border-radius: 60%; 
+}
+
+#biceps {
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    margin-top: 155px;
+    margin-left: 145px;
+    border-radius: 60%; 
+}
+
+#abdominals {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    margin-top: 170px;
+    margin-left: 190px;
     border-radius: 60%; 
 }
