@@ -1,9 +1,14 @@
 import React from 'react';
+import '../../stylesheets/savedStretches.scss';
+import SavedStretchDisplay from './subComponents/savedStretchDisplay';
 
-const RavedStretches = () => {
+const SavedStretches = () => {
   return (
-    <div>savedStretches</div>
+    <div className='savedStretchContainer'>
+      <h3>Saved Stretches</h3>
+      <SavedStretchDisplay />
+    </div>
   )
 }
 
-export default RavedStretches;
+export default SavedStretches;

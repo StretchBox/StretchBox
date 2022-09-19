@@ -1,20 +1,67 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+.bodyContainer {
     height: 600px;
-    width: 600px;
+    width: 650px;
     border-radius: 4px;
     border: 1px solid black;
     background-color: #92D293;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0.19);
+    display: grid;
+    font-family: 'Overpass', sans-serif;
+    box-sizing: border-box;
 }
 
-.bodyFront {
+.bottomPanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottomPanel label {
+    font-size: 14px;
+}
+
+#stretchCount {
+    margin-left: 5px;
+    height: 20px;
+    margin-bottom: 3px;
+}
+
+h3 {
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.bodyImgs {
     height: 450px;
-    width: 450px;
+    width: 90%;
+    justify-self: center;
 }
 
-.bodyFront img {
+.bodyImgs img {
     width: 100%;
     height: 100%;
+    border-radius: 10px;
+}
+
+form {
+    justify-self: center;
+    height: 50px;
+}
+
+.submitBtn {
+    background-color: green;
+    border: none;
+    height: 30px;
+    width: 80px;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 3px 5px 0 rgba(0,0,0.1);
+}
+
+.submitBtn:hover {
+    filter: brightness(120%);
 }
 
 button {
@@ -31,11 +78,105 @@ button {
 }
 
 #chest {
-    width: 50px;
+    width: 80px;
     height: 30px;
     position: absolute;
-    margin-top: 115px;
-    margin-left: 200px;
-    border-radius: 15px;
-    
+    margin-top: 135px;
+    margin-left: 176px;
+    border-radius: 50%; 
+}
+
+#forearms {
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    margin-top: 208px;
+    margin-left: 500px;
+    border-radius: 60%; 
+    rotate: -15deg;
+}
+
+#glutes {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    margin-top: 245px;
+    margin-left: 400px;
+    border-radius: 50%; 
+}
+
+#calves {
+    position: absolute;
+    width: 25px;
+    height: 55px;
+    margin-top: 360px;
+    margin-left: 390px;
+    border-radius: 50%; 
+}
+
+#lowerBack {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    margin-top: 208px;
+    margin-left: 415px;
+    border-radius: 60%; 
+}
+
+#lats {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    margin-top: 160px;
+    margin-left: 395px;
+    border-radius: 60%; 
+}
+
+#traps {
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    margin-top: 117px;
+    margin-left: 393px;
+    border-radius: 60%; 
+}
+
+#hamstrings {
+    position: absolute;
+    width: 35px;
+    height: 65px;
+    margin-top: 280px;
+    margin-left: 385px;
+    border-radius: 50%; 
+}
+
+#neck {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    margin-top: 95px;
+    margin-left: 420px;
+    border-radius: 60%; 
+}
+
+#middleBack {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 160px;
+    margin-left: 415px;
+    border-radius: 60%; 
+}
+
+#triceps1 {
+    position: absolute;
+    width: 25px;
+    height: 50px;
+    margin-top: 150px;
+    margin-left: 360px;
+    border-radius: 60%; 
+}
+
+.triceps {
+    position: absolute;
 }
