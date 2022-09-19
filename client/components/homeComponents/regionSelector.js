@@ -71,6 +71,11 @@ const RegionSelector = ({value}) => {
       <button id='lats' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='traps' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='triceps' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='quadriceps' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='biceps' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='abdominals' className='inactiveButton' onClick={handleRegionClick}></button>
+
+
 
       <div className='bodyImgs'>
         <img src={Body} alt='Human anatomical diagram, front and back'/>
