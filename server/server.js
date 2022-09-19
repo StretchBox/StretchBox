@@ -69,7 +69,7 @@ const apiController = require('./controllers/apiController')
 // }
 // databaseQuery();
 
-app.get('/api', apiController.getExercises, (req, res) => {
+app.post('/api', apiController.getExercises, (req, res) => {
   console.log('server res.locals.stretches', res.locals.stretches);
   res.status(200).json(res.locals.stretches);
 });
