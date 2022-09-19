@@ -7,18 +7,25 @@ const StretchDisplayWindow = ({value}) => {
   const [stretchCounter, setStretchCounter] = useState(0);
 
   useEffect(() => {
-    // if (value) setStretches(stretches.concat(value));
-    if (value) setStretches(stretches.concat(<StretchInfo 
-      key = {stretchCounter}
-      name =  {value[0].name}
-      muscle = {value[0].muscle}
-      instructions = {value[0].instructions}
-      />));
+    console.log(value);
+    let stretchArr = stretches;
+    if (value) {
+      for (let i = 0; i < value.length; i++) {
+        stretchArr.push(<StretchInfo 
+          key = {stretchCounter}
+          name =  {value[i].name}
+          muscle = {value[i].muscle}
+          instructions = {value[i].instructions}
+          />);
+      }
+    }
+    setStretches(stretchArr);
     setStretchCounter(stretchCounter + 1);
   }, [value])
 
   return(
     <div className="StretchDisplayWindow">
+      <button className="clear-button" onClick={(e) => setStretches([])}>Clear</button>
       <div>
         {stretches}
       </div>
