@@ -6,25 +6,44 @@ const apiController = {};
 
 //This api takes in all keys from req.body then makes an individual call to the database
   //it then randomly selects one stretch from the call and returns it to res.locals
-apiController.getExercises = (req, res, next) => {
+apiController.getExercises = async (req, res, next) => {
   // console.log(req.body);
-  let exerciseArr = Object.keys(req.body);
-  console.log(exerciseArr);
-  for (let i = 0; i < exerciseArr.length; i++){
-      // declare query text
-    database.query(`SELECT * FROM stretches WHERE ${exerciseArr[i]} = 'true'`)
-    .then((data) => {
-      res.locals.stretches = data.rows[Math.floor(Math.random() * (data.rows.length - 0))]
-      next()
-    })
-    // ,function (err, result, fields) {
-      // console.log(result);
-      // console.log(Math.floor(Math.random() * (result.rows.length - 0)))
-      // res.locals.stretches = result.rows[Math.floor(Math.random() * (result.rows.length - 0))];
-      // console.log(res.locals.stretches)
-      // next ()
+  const keysArr = Object.keys(req.body);
+  console.log(keysArr);
+  // create an array of stretch objs to send back
+  const stretchArr = [];
+  for (let i = 0; i < keysArr.length; i++){
+    // grab the current key in keys array, and use that to get the value in req.body for that key
+    let key = keysArr[i];
+    let value = req.body[key];
+    let text = `SELECT * FROM stretches WHERE ${key} = 'true'`;
+    // query the database for that muscle for that # of stretches
+    await database
+      .query(text)
+      .then((resp) => {
+        let index = Math.floor(Math.random() * (resp.rows.length - 0));
+        const stretch = {
+          muscle: key,
+          name: resp.rows[index].name,
+          instructions: resp.rows[index].instructions
+        }
+        // save the returned stretch objs in stretchArr
+        stretchArr.push(stretch);
+        console.log('stretch array in query', stretchArr)
+      })
+      
+      .catch(err => {
+        console.log('create stretch array error');
+        return next({
+          log: 'create stretch array error',
+          message: { er: 'create stretch error'}
+        })
+      })
     }
-    // next ()
+    // save stretchArr to res.locals to be sent back in the following middleware
+    res.locals.stretches = stretchArr;
+    console.log('final stretchArr', stretchArr);
+    next ()
   }
 //   next()
 // }
