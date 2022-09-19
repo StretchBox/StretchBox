@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../stylesheets/regionSelector.scss'
 import Body from '../../assets/bodyFrontBack.jpg'
 
-const RegionSelector = () => {
+const RegionSelector = ({value}) => {
   const [currentRegion, setCurrentRegion] = useState('');
   const [numberOfStretches, setNumberOfStretches] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -34,8 +34,7 @@ const RegionSelector = () => {
       const response = await fetch('/api', {
         method: 'POST',
         body: JSON.stringify({
-          region: currentRegion,
-          numOfStretches: numberOfStretches,
+          [currentRegion]: numberOfStretches,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +46,7 @@ const RegionSelector = () => {
       }
 
       const result = await response.json();
-      console.log('the result is: ', JSON.stringify(result));
+      value(result);
       // do something with result here
     } catch (err) {
       console.log(err.message);
@@ -92,7 +91,9 @@ const RegionSelector = () => {
       
         <form id='submit'>
           <input
-            onClick={queryDb}
+            onClick={(e) => {
+              if (currentRegion) queryDb(e);
+              }}
             type='submit'
             className='submitBtn'
             value='SUBMIT'
