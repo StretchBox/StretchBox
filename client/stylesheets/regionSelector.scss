@@ -114,7 +114,7 @@ button {
     border-radius: 50%; 
 }
 
-#lowerBack {
+#lower_back {
     position: absolute;
     width: 40px;
     height: 30px;
@@ -159,7 +159,7 @@ button {
     border-radius: 60%; 
 }
 
-#middleBack {
+#middle_back {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -168,15 +168,11 @@ button {
     border-radius: 60%; 
 }
 
-#triceps1 {
+#triceps {
     position: absolute;
     width: 25px;
     height: 50px;
     margin-top: 150px;
     margin-left: 360px;
     border-radius: 60%; 
-}
-
-.triceps {
-    position: absolute;
 }
