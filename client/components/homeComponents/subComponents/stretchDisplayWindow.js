@@ -1,31 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../../stylesheets/stretchDisplayWindow.scss'
+import StretchInfo from './stretchInfo';
 
- const StretchDisplayWindow = () => {
-  
-  let stretches = []
+const StretchDisplayWindow = ({value}) => {
+  const [stretches, setStretches] = useState([]);
+  const [stretchCounter, setStretchCounter] = useState(0);
 
-  /*
-    - will populate stretches array with sub-components from back-end response
-    - looping through piece of state (which contains objects from back-end)
+  useEffect(() => {
+    // if (value) setStretches(stretches.concat(value));
+    if (value) setStretches(stretches.concat(<StretchInfo 
+      key = {stretchCounter}
+      name =  {value[0].name}
+      muscle = {value[0].muscle}
+      instructions = {value[0].instructions}
+      />));
+    setStretchCounter(stretchCounter + 1);
+  }, [value])
 
-  */
-  return (
+  return(
     <div className="StretchDisplayWindow">
-
       <div>
         {stretches}
       </div>
-        Selected Stretches will be rendered here
-
-         
-
-
-
-
-
-
-
     </div>
   )
 }
