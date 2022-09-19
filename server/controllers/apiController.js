@@ -19,9 +19,8 @@ function fetchApi(variable) {
     const exercises = JSON.parse(body)
   
     // console.log(exercises)
-    //create empty arr
+    //returnArr will contain the new objects that we want to add to the database
     let returnArr = []
-    //loop through body array
     for (let i = 0; i < exercises.length; i++){
       const {name, muscle, instructions} = exercises[i]
       returnArr.push({
@@ -30,9 +29,9 @@ function fetchApi(variable) {
         instructions: instructions
       })
     }
-    // console.log(returnArr);
-    // iterate through returnArr
+    // iterate through returnArr to add each object to the database
     for (let i = 0; i < returnArr.length; i++){
+      console.log(returnArr[i].name)
         // declare query text
       const text = `INSERT INTO stretches(name, ${returnArr[i].muscle}, instructions) VALUES($1, $2, $3)`;
       // declare the values
@@ -49,6 +48,7 @@ function fetchApi(variable) {
     }
     return returnArr;
     }
+    //request is a specific way to call to this API
   request(options, callback, muscleGroup)
   // console.log(test);
 } 
@@ -66,7 +66,10 @@ apiController.adductors = (req, res, next) => {
 }
 
 apiController.biceps = (req, res, next) => {
-
+  let muscleGroup = 'biceps';
+  res.locals.chest = fetchApi(muscleGroup);
+  console.log('apiController.chest, res.locals', res.locals.chest);
+  next()
 }
 
 apiController.calves = (req, res, next) => {
@@ -74,9 +77,14 @@ apiController.calves = (req, res, next) => {
 }
 
 apiController.chest = (req, res, next) => {
-  let muscleGroup = 'chest';
-  res.locals.chest = fetchApi(muscleGroup);
-  console.log('apiController.chest, res.locals', res.locals.chest);
+  const muscleGroups = ['abdominals', 'abductors', 'adductors', 'biceps', 'calves', 'chest', 'forearms', 'glutes', 'hamstrings', 'lats', 'lower_back', 'middle_back', 'neck', 'quadriceps', 'traps', 'triceps']
+  const databaseQuery = () => {
+    for (let i = 0; i < muscleGroups.length; i++) {
+      fetchApi(muscleGroups[i])
+    }
+    return
+  }
+  databaseQuery();
   next()
 }
 
