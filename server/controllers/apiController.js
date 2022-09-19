@@ -9,7 +9,7 @@ const apiController = {};
 apiController.getExercises = async (req, res, next) => {
   // console.log(req.body);
   const keysArr = Object.keys(req.body);
-  console.log(keysArr);
+  // console.log(keysArr);
   // create an array of stretch objs to send back
   const stretchArr = [];
   for (let i = 0; i < keysArr.length; i++){
