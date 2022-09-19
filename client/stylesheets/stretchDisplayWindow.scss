@@ -1,0 +1,20 @@
+
+.StretchDisplayWindow {
+    width: 90%;
+    height: 90%;
+    justify-self: center;
+    align-self: center;
+    margin-left: 45px;
+    margin-top: 10px;
+}
+
+.clear-button {
+    background-color: green;
+    border: none;
+    height: 30px;
+    width: 80px;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 3px 5px 0 rgba(0,0,0.1);
+    margin: 5px;
+}

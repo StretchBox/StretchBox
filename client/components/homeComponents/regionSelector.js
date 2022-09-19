@@ -63,14 +63,19 @@ const RegionSelector = ({value}) => {
       <button id='chest' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='forearms' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='glutes' className='inactiveButton' onClick={handleRegionClick}></button>
-      <button id='lowerBack' className='inactiveButton' onClick={handleRegionClick}></button>
-      <button id='middleBack' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='lower_back' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='middle_back' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='hamstrings' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='calves' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='neck' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='lats' className='inactiveButton' onClick={handleRegionClick}></button>
       <button id='traps' className='inactiveButton' onClick={handleRegionClick}></button>
-      <button id='triceps1' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='triceps' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='quadriceps' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='biceps' className='inactiveButton' onClick={handleRegionClick}></button>
+      <button id='abdominals' className='inactiveButton' onClick={handleRegionClick}></button>
+
+
 
       <div className='bodyImgs'>
         <img src={Body} alt='Human anatomical diagram, front and back'/>

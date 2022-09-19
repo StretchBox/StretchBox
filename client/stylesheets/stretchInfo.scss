@@ -1,0 +1,19 @@
+.stretch-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: lightgray;
+    margin: 5px;
+}
+
+.instructions {
+    width: 70%;
+}
+
+.name-muscle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%;
+}
