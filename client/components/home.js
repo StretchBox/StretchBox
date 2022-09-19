@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <Header />
       <div id="main-flex">
-        <div class="dynamic-direction">
+        <div className="dynamic-direction">
           <RegionSelector value={setStretchData}/>
           <StretchDisplay value={stretchData}/>
         </div>
